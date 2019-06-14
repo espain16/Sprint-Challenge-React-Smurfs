@@ -17,7 +17,7 @@ class SmurfForm extends Component {
     const newSmurf ={...this.state.smurf}
   
     axios
-      .post("http://localhost:3333/smurfs", {newSmurf})
+      .post("http://localhost:3333/smurfs", newSmurf)
       .then(response =>
         this.setState({smurfs:response.data}))
       
@@ -59,7 +59,7 @@ class SmurfForm extends Component {
             value={this.state.height}
             name="height"
           />
-          <button type="submit">Add to the village</button>
+          <button onClick={this.addSmurf} type="submit">Add to the village</button>
         </form>
       </div>
     );
